@@ -46,4 +46,4 @@ is $m.render(
     "Say Hello, Jimmy.\n, and find me a Hello, Jimmy.\n",
     'inline partial can get filesystem partial';
 
-done;
+done-testing;

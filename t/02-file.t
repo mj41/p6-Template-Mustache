@@ -26,4 +26,4 @@ is Template::Mustache.render('hello', { :name<Jimmy> },
     "Hello, Jimmy.\n",
     "Absolute path to templates";
 
-done;
+done-testing;

@@ -69,4 +69,4 @@ is
         EOF
     'Event';
 
-done;
+done-testing;

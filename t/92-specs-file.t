@@ -24,7 +24,7 @@ for load-specs '../mustache-spec/specs' {
             ;#or last;
 }
 
-done;
+done-testing;
 
 
 # TODO Factor this out, it's used in 9*-specs*.t
