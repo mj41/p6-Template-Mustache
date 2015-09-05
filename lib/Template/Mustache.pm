@@ -44,10 +44,12 @@ class Template::Mustache {
 
     class Template::Mustache::Actions {
         method TOP($/) {
+            note $/.perl;
             my %x = :val(''), :contents([]);
             my @frames;
             @frames.unshift: $%x;
             for $<hunk>».made.flat -> $hunk {
+                note $hunk.perl;
                 if $hunk ~~ Associative and $hunk<type> eq 'section' {
                     if $hunk<on> {
                         @frames[0]<contents>.push: $hunk;
@@ -78,7 +80,6 @@ class Template::Mustache {
                 }
             }
             @frames[0]<contents>.push(~$0) if $0.chars;
-
             make %x<contents>;
         }
         method hunk($/) {
@@ -176,6 +177,7 @@ class Template::Mustache {
 
         my $actions = Template::Mustache::Actions.new;
         my @parsed = parse-template($initial-template);
+        note @parsed.perl; exit; # mj41 debug
         return format(@parsed, [%context]);
 
 
